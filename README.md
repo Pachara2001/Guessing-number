@@ -1,4 +1,4 @@
-## contributor
+## Contributor
 - Pachara Srisomboonchote 6210401295
 - Peerawich Tantavachkij 6210400167
 
