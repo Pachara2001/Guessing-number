@@ -2,7 +2,11 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
+
+// Pachara Srisomboonchote 6210401295
+// Peerawich Tantavachkij 6210400167
 public class Client {
+
     public static void main(String [] args) {
         String serverName = "localhost";
         int port = 4587;
@@ -29,6 +33,7 @@ public class Client {
                 System.out.print(fromServ);
                 String i = scanner.next();
                 if(i.equalsIgnoreCase("y")) {
+                    client.close();
                     System.out.println();
                     System.out.println("Connecting to " + serverName + " on port " + port);
                     client = new Socket(serverName, port);

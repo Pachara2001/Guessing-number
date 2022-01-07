@@ -1,5 +1,8 @@
 import java.util.concurrent.ThreadLocalRandom;
 
+// Pachara Srisomboonchote 6210401295
+// Peerawich Tantavachkij 6210400167
+
 public class GuessNum {
     private int target,count;
 

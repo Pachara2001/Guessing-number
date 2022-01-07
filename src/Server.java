@@ -1,6 +1,8 @@
 import java.net.*;
 import java.io.*;
 
+// Pachara Srisomboonchote 6210401295
+// Peerawich Tantavachkij 6210400167
 public class Server extends Thread {
     private ServerSocket serverSocket;
 
@@ -49,11 +51,6 @@ public class Server extends Thread {
                     out.writeUTF(strOut);
 
                 }
-
-                //out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress()
-                       // + "\nGoodbye!");
-
-
 
             } catch (SocketTimeoutException s) {
                 System.out.println("Socket timed out!");
