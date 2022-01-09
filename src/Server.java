@@ -29,7 +29,8 @@ public class Server extends Thread {
                    int result= game.guess(input);
                     System.out.println("From player: "+input);
                     if( result==0) {
-                        System.out.println("correct !! closing game");
+                        System.out.println("Correct !! in "+game.getCount()+" times, closing game.");
+                        System.out.println("----------------------------------------------------------------------------");
                         DataOutputStream out = new DataOutputStream(server.getOutputStream());
                         strOut="Congrats !! you win this game in "+game.getCount()+" Times";
                         out.writeUTF(strOut);

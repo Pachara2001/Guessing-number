@@ -15,13 +15,23 @@ public class Client {
             Socket client = new Socket(serverName, port);
 
             System.out.println("Just connected to " + client.getRemoteSocketAddress());
+            System.out.println("\n" +
+                    "░██████╗░██╗░░░██╗███████╗░██████╗░██████╗██╗███╗░░██╗░██████╗░  ███╗░░██╗██╗░░░██╗███╗░░░███╗\n" +
+                    "██╔════╝░██║░░░██║██╔════╝██╔════╝██╔════╝██║████╗░██║██╔════╝░  ████╗░██║██║░░░██║████╗░████║\n" +
+                    "██║░░██╗░██║░░░██║█████╗░░╚█████╗░╚█████╗░██║██╔██╗██║██║░░██╗░  ██╔██╗██║██║░░░██║██╔████╔██║\n" +
+                    "██║░░╚██╗██║░░░██║██╔══╝░░░╚═══██╗░╚═══██╗██║██║╚████║██║░░╚██╗  ██║╚████║██║░░░██║██║╚██╔╝██║\n" +
+                    "╚██████╔╝╚██████╔╝███████╗██████╔╝██████╔╝██║██║░╚███║╚██████╔╝  ██║░╚███║╚██████╔╝██║░╚═╝░██║\n" +
+                    "░╚═════╝░░╚═════╝░╚══════╝╚═════╝░╚═════╝░╚═╝╚═╝░░╚══╝░╚═════╝░  ╚═╝░░╚══╝░╚═════╝░╚═╝░░░░░╚═╝");
             OutputStream outToServer = client.getOutputStream();
             DataOutputStream out = new DataOutputStream(outToServer);
 
             while (true){
             Scanner scanner = new Scanner(System.in);
             System.out.print("Guessing integer between 0-100: ");
-            int input = scanner.nextInt();
+            int input;
+            if(scanner.hasNextInt()){
+             input = scanner.nextInt();}
+            else continue;
             System.out.println();
             out.writeUTF(""+input);
             InputStream inFromServer = client.getInputStream();
@@ -32,6 +42,7 @@ public class Client {
                 fromServ =in.readUTF();
                 System.out.print(fromServ);
                 String i = scanner.next();
+                System.out.println("----------------------------------------------------------------------------");
                 if(i.equalsIgnoreCase("y")) {
                     client.close();
                     System.out.println();
